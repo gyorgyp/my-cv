@@ -4,8 +4,17 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>CV</title>
     <title>György Péter — Software Engineer, Tulip Platform Specialist</title>
+    <script>
+  (function () {
+    var theme = "light";
+    try {
+      var saved = window.localStorage.getItem("p-cv-theme");
+      if (saved === "light" || saved === "dark") theme = saved;
+    } catch (e) {}
+    document.documentElement.setAttribute("data-theme", theme);
+  })();
+</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -13,25 +22,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
     <style>
   :root {
-    --bg: #11171a;
-    --panel: #1a2225;
-    --panel-line: #2c3639;
-    --amber: #e8a33d;
-    --teal: #52ad8e;
-    --text: #ecebe4;
-    --text-dim: #939c98;
-    --text-dimmer: #5f6a66;
-    --grid-line: rgba(82, 173, 142, 0.055);
-    --shadow: rgba(0,0,0,0.35);
-    --font-display: 'Space Grotesk', 'Segoe UI', sans-serif;
-    --font-body: 'IBM Plex Sans', 'Segoe UI', sans-serif;
-    --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
-    box-sizing: border-box;
-    padding-top: env(safe-area-inset-top, 0px);
-    padding-bottom: env(safe-area-inset-bottom, 0px);
-    transition: background 0.25s ease, color 0.25s ease;
-  }
-  :root[data-theme="light"] {
     --bg: #eef1ee;
     --panel: #f8f9f6;
     --panel-line: #d5dbd4;
@@ -42,6 +32,25 @@
     --text-dimmer: #8a948c;
     --grid-line: rgba(47, 124, 99, 0.08);
     --shadow: rgba(27, 35, 33, 0.08);
+    --font-display: 'Space Grotesk', 'Segoe UI', sans-serif;
+    --font-body: 'IBM Plex Sans', 'Segoe UI', sans-serif;
+    --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    transition: background 0.25s ease, color 0.25s ease;
+  }
+  :root[data-theme="dark"] {
+    --bg: #11171a;
+    --panel: #1a2225;
+    --panel-line: #2c3639;
+    --amber: #e8a33d;
+    --teal: #52ad8e;
+    --text: #ecebe4;
+    --text-dim: #939c98;
+    --text-dimmer: #5f6a66;
+    --grid-line: rgba(82, 173, 142, 0.055);
+    --shadow: rgba(0,0,0,0.35);
   }
   * { box-sizing: border-box; }
   html { scroll-padding-top: env(safe-area-inset-top, 0px); scroll-behavior: smooth; }
