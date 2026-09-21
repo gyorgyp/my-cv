@@ -2,7 +2,7 @@ import { createRoot } from 'react-dom/client'
 
 const h = React.createElement;
 const { useState, useEffect } = React;
-const THEME_KEY = "gyp-cv-theme";
+const THEME_KEY = "gp-cv-theme";
 
 function getInitialTheme() {
   try {
@@ -282,4 +282,3 @@ function App() {
 }
 
 ReactDOM.createRoot(document.getElementById("root")).render(h(App));
-
