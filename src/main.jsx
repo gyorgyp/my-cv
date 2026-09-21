@@ -2,14 +2,14 @@ import { createRoot } from 'react-dom/client'
 
 const h = React.createElement;
 const { useState, useEffect } = React;
-const THEME_KEY = "gp-cv-theme";
+const THEME_KEY = "pg-cv-theme";
 
 function getInitialTheme() {
   try {
     const saved = window.localStorage.getItem(THEME_KEY);
     if (saved === "light" || saved === "dark") return saved;
   } catch (e) {}
-  return "dark";
+  return "light";
 }
 
 function ModeToggle() {
@@ -231,7 +231,7 @@ function App() {
     h("div", { className: "grid-bg" }),
     h("div", { className: "wrap" },
       h("div", { className: "topbar" },
-        h("span", null, "GYP / CV / 2026"),
+        h("span", null, "PG / CV / 2026"),
         h("div", { className: "topbar-right" },
           h("span", { className: "status" }, h("span", { className: "status-dot" }), "Open to opportunities"),
           h(ModeToggle, null)
