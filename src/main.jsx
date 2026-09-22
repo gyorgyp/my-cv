@@ -238,8 +238,8 @@ function App() {
         )
       ),
       h("div", { className: "hero" },
-        h("h1", null, "György Péter"),
-        h("p", { className: "role" }, "Software Engineer — Tulip Platform Specialist"),
+        h("h1", null, "GYöRGY Péter"),
+        h("p", { className: "role" }, "Software Engineer - Tulip Platform Specialist"),
         h("p", { className: "profile" },
           h("strong", null, "15+ years"), " in operations-focused software development and DevOps. ",
           "Recently spent 11 months building production apps on the ", h("strong", null, "Tulip Interfaces"),

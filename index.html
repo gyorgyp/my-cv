@@ -7,12 +7,16 @@
     <title>György Péter — Software Engineer, Tulip Platform Specialist</title>
     <script>
       (function () {
-        var theme = "light";
         try {
-          var saved = window.localStorage.getItem("p-cv-theme");
-          if (saved === "light" || saved === "dark") theme = saved;
+          var saved = window.localStorage.getItem("pg-cv-theme");
+          if (saved === "dark" || saved === "light")
+            theme = saved;
+          else {
+            var mql = window.matchMedia("(prefers-color-scheme: dark)");
+            theme = mql.matches ? "dark" : "light"; 
+          }
+          document.documentElement.setAttribute("data-theme", theme);          
         } catch (e) {}
-        document.documentElement.setAttribute("data-theme", theme);
       })();
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,7 +25,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
     <style>
-  :root {
+    :root {
     --bg: #eef1ee;
     --panel: #f8f9f6;
     --panel-line: #d5dbd4;
@@ -183,7 +187,7 @@
     margin: 0 0 26px;
   }
   .hero .profile {
-    max-width: 62ch;
+    max-width: 100%;
     font-size: 16px;
     line-height: 1.65;
     color: #6f706a;
